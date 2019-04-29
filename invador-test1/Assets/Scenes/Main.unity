@@ -314,6 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df79ecf69b65212438b6b2b5cc93b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemySpeed: 0.05
 --- !u!65 &509440301
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -498,8 +499,9 @@ GameObject:
   - component: {fileID: 1584447799}
   - component: {fileID: 1584447798}
   - component: {fileID: 1584447797}
+  - component: {fileID: 1584447802}
   m_Layer: 0
-  m_Name: Tank
+  m_Name: Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -517,6 +519,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 319ed0fc7f8a20d4f9d02b2fd8339f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TankSpeed: 1
+  tankPos: {x: 0, y: -1, z: 0}
+  width: 5
 --- !u!65 &1584447798
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -589,6 +594,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1584447802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584447796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b66a4d09dc140447bfea0df6cac120e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TankSpeed: 1
 --- !u!1 &1709372825
 GameObject:
   m_ObjectHideFlags: 0
