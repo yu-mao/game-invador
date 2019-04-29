@@ -2,21 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Movement
-/// Destroy on projectile collision
-/// </summary>
 public class Enemy : MonoBehaviour
 {
+    public GameObject GameplayObj;
     public float EnemyHorizontalSpeed = 0.05f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    /// <summary>
+    /// Move enemy in given vertical & horizontal pattern
+    /// Detect projectile collision with enemy
+    /// </summary>
     void Update()
     {
         float enemyPosX = transform.position.x + direction * EnemyHorizontalSpeed;
@@ -30,9 +24,23 @@ public class Enemy : MonoBehaviour
 
     }
 
-    private void OnDestroy()
+    /// <summary>
+    /// rotate enemy so that the y-axis faces along the normal of the surface
+    /// then destroy the enemy
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnCollisionEnter(Collision collision)
     {
-        Gameplay.OnDestroyEnemy();
+        ContactPoint contact = collision.contacts[0];
+        Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
+        Vector3 pos = contact.point;
+        OnDestroyEnemy(transform);
+    }
+
+    private void OnDestroyEnemy(Transform t)
+    {
+        Destroy(t.gameObject);
+        GameplayObj.GetComponent<Gameplay>().OnDestroyEnemy();
     }
 
     private Vector3 enemyPos = new Vector3(0f, 2f, 0);  // initial position

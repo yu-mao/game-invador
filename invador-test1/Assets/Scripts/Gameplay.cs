@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Load intro, main, ending scenes
@@ -9,10 +10,20 @@ using UnityEngine;
 /// </summary>
 public class Gameplay : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Text TextField;
+    public int Score
     {
-        
+        get { return this.score; }
+        set
+        {
+            this.score = value;
+            TextField.text = "Score: " + value.ToString();
+        }
+    }
+
+    private void Awake()
+    {
+        this.score = 0;
     }
 
     // Update is called once per frame
@@ -21,8 +32,9 @@ public class Gameplay : MonoBehaviour
         
     }
 
-    public static void OnDestroyEnemy()
+    public void OnDestroyEnemy()
     {
+        this.Score += scoreDestroyEnemy;
     }
 
     private void Win()
@@ -33,6 +45,6 @@ public class Gameplay : MonoBehaviour
     {
     }
 
-    private int score = 0;
-    private int scoreDestroyEnemy = 10;
+    private static int scoreDestroyEnemy = 10;
+    private int score;
 }
