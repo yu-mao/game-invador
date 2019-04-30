@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
-    public GameObject GameplayObj;
     public float EnemiesHorizontalSpeed = 0.05f;
     public float EnemiesVerticalSpeed = 0.05f;
+    public GameObject GameplayObj;
 
     /// <summary>
     /// Move enemy in given vertical & horizontal pattern
@@ -35,12 +35,13 @@ public class Enemies : MonoBehaviour
         //ContactPoint contact = collision.contacts[0];
         //Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
         //Vector3 pos = contact.point;
-        OnDestroyEnemy(transform);
+        Collider collidedEnemy = collision.contacts[0].thisCollider;
+        OnDestroyEnemy(collidedEnemy);
     }
 
-    private void OnDestroyEnemy(Transform t)
+    private void OnDestroyEnemy(Collider c)
     {
-        Destroy(t.gameObject);
+        Destroy(c.gameObject);
         GameplayObj.GetComponent<Gameplay>().OnDestroyEnemy();
     }
 

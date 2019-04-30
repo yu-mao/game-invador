@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ship : MonoBehaviour
 {
-    public float TankSpeed = 1f;
+    public float ShipSpeed = 1f;
     public GameObject Projectile;
 
     private void Awake()
@@ -18,7 +18,7 @@ public class Ship : MonoBehaviour
     /// </summary>
     void Update()
     {
-        float shipPosX = transform.position.x + (Input.GetAxis("Horizontal") * TankSpeed);
+        float shipPosX = transform.position.x + (Input.GetAxis("Horizontal") * ShipSpeed);
         shipPos = new Vector3(Mathf.Clamp(shipPosX, -1 * screenWidth / 2, screenWidth / 2), -1f, 0);
         transform.position = shipPos;
 
@@ -36,6 +36,6 @@ public class Ship : MonoBehaviour
 
     private Vector3 shipPos = new Vector3(0, -6f, 0);
     private float screenWidth = 5f;
-    private Vector3 projectileSpeed = new Vector3(0, 1f, 0);
+    private Vector3 projectileSpeed = new Vector3(0, 2f, 0);
     //private float screenWidth = Screen.width;
 }

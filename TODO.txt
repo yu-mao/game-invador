@@ -1,3 +1,0 @@
-enemies: initialized layout
-	move from left to right and from right to left
-	go down one row when a screen side is reached

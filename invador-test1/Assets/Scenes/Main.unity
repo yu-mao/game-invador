@@ -1685,7 +1685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b66a4d09dc140447bfea0df6cac120e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TankSpeed: 1
+  ShipSpeed: 1
   Projectile: {fileID: 8251964539589537351, guid: d2eb0a61e87b4134abb317a5d6a6994d,
     type: 3}
 --- !u!1 &1681133711
@@ -1756,9 +1756,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2f87c2bd296294ca9d70f73f2aa6e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameplayObj: {fileID: 2018123782}
   EnemiesHorizontalSpeed: 0.05
   EnemiesVerticalSpeed: 1
+  GameplayObj: {fileID: 2018123782}
 --- !u!23 &1681133714
 MeshRenderer:
   m_ObjectHideFlags: 0
