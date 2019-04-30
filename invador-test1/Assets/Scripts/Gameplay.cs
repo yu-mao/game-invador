@@ -52,12 +52,12 @@ public class Gameplay : MonoBehaviour
 
     private void Win()
     {
-        Debug.Log("Win!");
+        //Debug.Log("Win!");
     }
 
     private void Lose()
     {
-        Debug.Log("Lose!");
+        //Debug.Log("Lose!");
     }
 
     private static int scoreDestroyEnemy = 10;

@@ -6,7 +6,6 @@ public class Ship : MonoBehaviour
 {
     public float ShipSpeed = 1f;
     public GameObject Projectile;
-    public GameObject PlayerLayer;
 
     private void Awake()
     {
@@ -33,11 +32,10 @@ public class Ship : MonoBehaviour
     {
         Vector3 projectilePos = new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z);
         GameObject projectile = Instantiate(Projectile, transform.position, Quaternion.identity);
-        projectile.transform.SetParent(PlayerLayer.transform);
         projectile.GetComponent<Rigidbody>().velocity = projectileSpeed;
     }
 
-    private Vector3 shipPos = new Vector3(0, -6f, 0);
+    private Vector3 shipPos = new Vector3(0, -10f, 0);
     private float screenWidth = 5f;
     private Vector3 projectileSpeed = new Vector3(0, 2f, 0);
     //private float screenWidth = Screen.width;
