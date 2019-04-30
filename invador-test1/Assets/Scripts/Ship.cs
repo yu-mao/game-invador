@@ -6,7 +6,6 @@ public class Ship : MonoBehaviour
 {
     public float TankSpeed = 1f;
     public GameObject Projectile;
-    public GameObject GameplayObj;
 
     /// <summary>
     /// Right/Left keys for side movement

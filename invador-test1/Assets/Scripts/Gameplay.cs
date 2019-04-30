@@ -11,6 +11,8 @@ using UnityEngine.UI;
 public class Gameplay : MonoBehaviour
 {
     public Text TextField;
+    public GameObject EnemiesObj;
+    public GameObject ShipObj;
     public int Score
     {
         get { return this.score; }
@@ -21,20 +23,20 @@ public class Gameplay : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        this.score = 0;
-    }
-
     // Update is called once per frame
     void Update()
     {
-        
+        CheckWinLose();
     }
 
     public void OnDestroyEnemy()
     {
         this.Score += scoreDestroyEnemy;
+    }
+
+    private void CheckWinLose()
+    {
+        
     }
 
     private void Win()
@@ -46,5 +48,6 @@ public class Gameplay : MonoBehaviour
     }
 
     private static int scoreDestroyEnemy = 10;
-    private int score;
+    private int score = 0;
+    private float enemySpaceHeight = Screen.height - 2f;
 }

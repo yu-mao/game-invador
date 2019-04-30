@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemies : MonoBehaviour
 {
     public GameObject GameplayObj;
-    public float EnemyHorizontalSpeed = 0.05f;
+    public float EnemiesHorizontalSpeed = 0.05f;
+    public float EnemiesVerticalSpeed = 0.05f;
 
     /// <summary>
     /// Move enemy in given vertical & horizontal pattern
@@ -13,15 +14,15 @@ public class Enemy : MonoBehaviour
     /// </summary>
     void Update()
     {
-        float enemyPosX = transform.position.x + direction * EnemyHorizontalSpeed;
-        float enemyPosY = transform.position.y;
-        if (enemyPosX >= screenWidth / 2 || enemyPosX <= -1 * screenWidth / 2)
+        float enemiesPosX = transform.position.x + direction * EnemiesHorizontalSpeed;
+        float enemiesPosY = transform.position.y;
+
+        if (enemiesPosX >= screenWidth / 2 || enemiesPosX <= -1 * screenWidth / 2)
         {
             direction *= -1f;
-            enemyPosY -= enemyVerticalSpeed;
+            enemiesPosY -= EnemiesVerticalSpeed;
         }
-        transform.position = new Vector3(enemyPosX, enemyPosY, 0);
-
+        transform.position = new Vector3(enemiesPosX, enemiesPosY, 0);
     }
 
     /// <summary>
@@ -31,9 +32,9 @@ public class Enemy : MonoBehaviour
     /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
-        ContactPoint contact = collision.contacts[0];
-        Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
-        Vector3 pos = contact.point;
+        //ContactPoint contact = collision.contacts[0];
+        //Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
+        //Vector3 pos = contact.point;
         OnDestroyEnemy(transform);
     }
 
@@ -43,9 +44,8 @@ public class Enemy : MonoBehaviour
         GameplayObj.GetComponent<Gameplay>().OnDestroyEnemy();
     }
 
-    private Vector3 enemyPos = new Vector3(0f, 2f, 0);  // initial position
-    private float enemyVerticalSpeed = 0.1f;
     private float direction = 1f;
     private float screenWidth = 5f;
     //private float screenWidth = Screen.width;
+
 }
