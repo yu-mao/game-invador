@@ -7,15 +7,20 @@ public class Ship : MonoBehaviour
     public float TankSpeed = 1f;
     public GameObject Projectile;
 
+    private void Awake()
+    {
+        shipPos = transform.position;
+    }
+
     /// <summary>
     /// Right/Left keys for side movement
     /// Space key to fire projectiles
     /// </summary>
     void Update()
     {
-        float tankPosX = transform.position.x + (Input.GetAxis("Horizontal") * TankSpeed);
-        tankPos = new Vector3(Mathf.Clamp(tankPosX, -1 * screenWidth / 2, screenWidth / 2), -1f, 0);
-        transform.position = tankPos;
+        float shipPosX = transform.position.x + (Input.GetAxis("Horizontal") * TankSpeed);
+        shipPos = new Vector3(Mathf.Clamp(shipPosX, -1 * screenWidth / 2, screenWidth / 2), -1f, 0);
+        transform.position = shipPos;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -29,7 +34,7 @@ public class Ship : MonoBehaviour
         projectile.GetComponent<Rigidbody>().velocity = projectileSpeed;
     }
 
-    private Vector3 tankPos = new Vector3(0, -1f, 0);
+    private Vector3 shipPos = new Vector3(0, -6f, 0);
     private float screenWidth = 5f;
     private Vector3 projectileSpeed = new Vector3(0, 1f, 0);
     //private float screenWidth = Screen.width;

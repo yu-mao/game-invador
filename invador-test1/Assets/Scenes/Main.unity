@@ -1758,7 +1758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameplayObj: {fileID: 2018123782}
   EnemiesHorizontalSpeed: 0.05
-  EnemiesVerticalSpeed: 0.2
+  EnemiesVerticalSpeed: 1
 --- !u!23 &1681133714
 MeshRenderer:
   m_ObjectHideFlags: 0
