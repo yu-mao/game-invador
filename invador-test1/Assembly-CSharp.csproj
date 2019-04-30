@@ -62,9 +62,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\CollisionLayer.cs" />
     <Compile Include="Assets\Scripts\Enemies.cs" />
     <Compile Include="Assets\Scripts\Gameplay.cs" />
-    <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\Ship.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/Self_learn/InterviewTasks/game-invador/invador-test1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

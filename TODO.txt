@@ -1,0 +1,2 @@
+destroy projectile onCollisionEnter
+adjust enemies, ship initial positions

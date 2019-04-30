@@ -25,26 +25,6 @@ public class Enemies : MonoBehaviour
         transform.position = new Vector3(enemiesPosX, enemiesPosY, 0);
     }
 
-    /// <summary>
-    /// rotate enemy so that the y-axis faces along the normal of the surface
-    /// then destroy the enemy
-    /// </summary>
-    /// <param name="collision"></param>
-    private void OnCollisionEnter(Collision collision)
-    {
-        //ContactPoint contact = collision.contacts[0];
-        //Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
-        //Vector3 pos = contact.point;
-        Collider collidedEnemy = collision.contacts[0].thisCollider;
-        OnDestroyEnemy(collidedEnemy);
-    }
-
-    private void OnDestroyEnemy(Collider c)
-    {
-        Destroy(c.gameObject);
-        GameplayObj.GetComponent<Gameplay>().OnDestroyEnemy();
-    }
-
     private float direction = 1f;
     private float screenWidth = 5f;
     //private float screenWidth = Screen.width;
