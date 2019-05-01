@@ -27,12 +27,12 @@ public class GameManager : MonoBehaviour
         else if (instance != this)
             Destroy(gameObject);
 
-        InitGame();
+        //InitGame();
         
     }
 
-    void InitGame()
-    { }
+    //void InitGame()
+    //{ }
 
     private void Update()
     {
@@ -62,15 +62,23 @@ public class GameManager : MonoBehaviour
     void Win()
     {
         YouWinObj.SetActive(true);
-        //Time.timeScale = .25f;
+        Time.timeScale = .25f;
+        Invoke("LoadEndingScene", .5f);
         //Invoke("Reset", 1f);
     }
 
     void Lose()
     {
         GameoverObj.SetActive(true);
-        //Time.timeScale = .25f;
+        Time.timeScale = .25f;
+        Invoke("LoadEndingScene", .5f);
         //Invoke("Reset", 1f);
+    }
+
+    private void LoadEndingScene()
+    {
+        Time.timeScale = 1f;
+        Application.LoadLevel("Ending");
     }
 
     public void OnDestroyEnemy()

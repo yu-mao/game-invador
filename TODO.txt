@@ -1,3 +1,0 @@
-Win/Lose effect
-screenWidth adjust to windowWidth, check the effect in .exe build
-

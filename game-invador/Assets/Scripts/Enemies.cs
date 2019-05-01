@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
-    public float HorizontalSpeed = 0.05f;
+    public float HorizontalSpeed = 0.5f;
     public float VerticalSpeed = 0.5f;
     
     void Update()
