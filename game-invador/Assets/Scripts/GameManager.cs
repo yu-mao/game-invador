@@ -61,15 +61,15 @@ public class GameManager : MonoBehaviour
     void Win()
     {
         YouWinObj.SetActive(true);
-        Time.timeScale = .25f;
-        Invoke("Reset", 1f);
+        //Time.timeScale = .25f;
+        //Invoke("Reset", 1f);
     }
 
     void Lose()
     {
         GameoverObj.SetActive(true);
-        Time.timeScale = .25f;
-        Invoke("Reset", 1f);
+        //Time.timeScale = .25f;
+        //Invoke("Reset", 1f);
     }
 
     public void OnDestroyEnemy()
