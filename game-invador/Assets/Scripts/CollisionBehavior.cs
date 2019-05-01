@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CollisionBehavior : MonoBehaviour
 {
@@ -12,20 +10,6 @@ public class CollisionBehavior : MonoBehaviour
         {
             Destroy(collision.gameObject);
             GameManager.instance.OnDestroyEnemy();
-
-            if (collision.gameObject.tag == "Enemy")
-            {
-                //var audio = collision.collider.GetComponent<AudioSource>();
-                //audio.Play();
-                Audio.Play();
-                Debug.Log(Audio.name);
-            }
-
-            //var audioLala = gameObject.GetComponent<AudioSource>();
-            //audioLala.Play();
-            //Debug.Log("Audio");
-            //Audio.Play(0);
-            //transform.GetComponent<SoundEffect>().PlayAudio();
         }
     }
 }

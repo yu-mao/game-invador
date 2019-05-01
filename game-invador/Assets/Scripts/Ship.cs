@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Ship : MonoBehaviour
 {
@@ -12,7 +10,6 @@ public class Ship : MonoBehaviour
         shipPos = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         float shipPosX = transform.position.x + (Input.GetAxis("Horizontal") * Speed);
@@ -25,13 +22,14 @@ public class Ship : MonoBehaviour
 
     void FireProjectile(Vector3 pos)
     {
-        Vector3 projectilePos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        Vector3 projectilePos = new Vector3(transform.position.x, transform.position.y + offsetProjectileShip, transform.position.z);
         GameObject projectile = Instantiate(Projectile, projectilePos, Quaternion.identity);
         projectile.GetComponent<Rigidbody>().velocity = new Vector3(0, projectileSpeed, 0);
+        Debug.Log("Project!");
     }
 
     private Vector3 shipPos;
     private float screenWidth = 5f;
-    //private float screenWidth = Screen.width;
     private float projectileSpeed = 10f;
+    private float offsetProjectileShip = 1f;
 }

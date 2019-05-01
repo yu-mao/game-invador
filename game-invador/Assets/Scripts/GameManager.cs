@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -89,5 +87,4 @@ public class GameManager : MonoBehaviour
     private float offsetDistance = 1f;
     private int score = 0;
     private int scoreEnemyDestroied = 5;
-    private bool isPause = false;
 }

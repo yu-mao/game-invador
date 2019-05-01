@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
@@ -23,5 +21,4 @@ public class Enemies : MonoBehaviour
 
     private float direction = 1f;
     private float screenWidth = 5f;
-    //private float screenWidth = Screen.width;
 }

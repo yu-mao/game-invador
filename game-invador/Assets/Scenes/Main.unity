@@ -2082,7 +2082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HorizontalSpeed: 0.05
-  VerticalSpeed: 1.5
+  VerticalSpeed: 1.7
 --- !u!1001 &1716413302
 PrefabInstance:
   m_ObjectHideFlags: 0
