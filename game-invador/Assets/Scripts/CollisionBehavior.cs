@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Destroy collided gameobjects if tagged as Enemy or Projectile
+/// </summary>
 public class CollisionBehavior : MonoBehaviour
 {
     public AudioSource Audio;

@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Move in given movement pattern
+/// </summary>
 public class Enemies : MonoBehaviour
 {
     public float HorizontalSpeed = 0.5f;

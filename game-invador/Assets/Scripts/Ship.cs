@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Left, right key to move ship horizontally
+/// Space key to fire projectile
+/// </summary>
 public class Ship : MonoBehaviour
 {
     public float Speed = 1f;
@@ -25,7 +29,6 @@ public class Ship : MonoBehaviour
         Vector3 projectilePos = new Vector3(transform.position.x, transform.position.y + offsetProjectileShip, transform.position.z);
         GameObject projectile = Instantiate(Projectile, projectilePos, Quaternion.identity);
         projectile.GetComponent<Rigidbody>().velocity = new Vector3(0, projectileSpeed, 0);
-        Debug.Log("Project!");
     }
 
     private Vector3 shipPos;

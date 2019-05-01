@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Check win and lose conditions
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
@@ -24,13 +27,8 @@ public class GameManager : MonoBehaviour
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
-
-        //InitGame();
         
     }
-
-    //void InitGame()
-    //{ }
 
     private void Update()
     {
