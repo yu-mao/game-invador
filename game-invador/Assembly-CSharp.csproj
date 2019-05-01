@@ -63,8 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CollisionBehavior.cs" />
+    <Compile Include="Assets\Scripts\Ending.cs" />
     <Compile Include="Assets\Scripts\Enemies.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Intro.cs" />
     <Compile Include="Assets\Scripts\Ship.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/Self_learn/InterviewTasks/game-invador/game-invador/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

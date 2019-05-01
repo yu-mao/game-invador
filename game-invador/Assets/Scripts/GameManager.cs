@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         InitGame();
+        
     }
 
     void InitGame()
@@ -80,4 +81,5 @@ public class GameManager : MonoBehaviour
     private float offsetDistance = 1f;
     private int score = 0;
     private int scoreEnemyDestroied = 5;
+    private bool isPause = false;
 }
