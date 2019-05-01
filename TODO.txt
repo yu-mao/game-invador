@@ -1,2 +1,6 @@
-destroy projectile onCollisionEnter
-adjust enemies, ship initial positions
+main scene: enemy sprite & onCollision sprite change, ship sprite, projectile sprite, onCollision effect
+screenWidth adjust to windowWidth, check the effect in .exe build
+quit button in main scene
+Win/Lose effect
+intro guidance
+

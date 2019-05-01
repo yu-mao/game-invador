@@ -14,9 +14,11 @@ public class GameManager : MonoBehaviour
         set
         {
             score = value;
-            TextField.text = "Score: " + value.ToString();
+            TextField.text = "SCORE: " + value.ToString();
         }
     }
+    public GameObject YouWinObj;
+    public GameObject GameoverObj;
 
     void Awake()
     {
@@ -58,12 +60,16 @@ public class GameManager : MonoBehaviour
 
     void Win()
     {
-        Debug.Log("Win!");
+        YouWinObj.SetActive(true);
+        Time.timeScale = .25f;
+        Invoke("Reset", 1f);
     }
 
     void Lose()
     {
-        Debug.Log("Lose");
+        GameoverObj.SetActive(true);
+        Time.timeScale = .25f;
+        Invoke("Reset", 1f);
     }
 
     public void OnDestroyEnemy()
